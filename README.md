@@ -20,7 +20,13 @@
 </p>
 
 <p align="center">
-  <a href="https://codepen.io/emmanpbarrameda/pen/emOGzYJ" target="_blank"><strong>🔴 Live Demo on CodePen</strong></a>
+  <a href="https://codepen.io/emmanpbarrameda/pen/emOGzYJ" target="_blank">
+    <strong>🔴 Live Demo on CodePen</strong>
+  </a>
+  <br>
+  <a href="https://github.com/emmanpbarrameda/scrollify-php" target="_blank">
+    <strong>Looking for PHP Version?</strong>
+  </a>
 </p>
 
 ## ✨ Features
