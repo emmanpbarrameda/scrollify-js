@@ -1,4 +1,4 @@
-/* ==================== SCROLLIFY - SCROLL PROGRESS INDICATOR WHEN SCROLLING ON WEB PAGE ==================== */
+/* ==================== SCROLLIFY-JS - SCROLL PROGRESS INDICATOR WHEN SCROLLING ON WEB PAGE ==================== */
 
 /* =================== PAGE LOAD EVENT =================== */
 /* 

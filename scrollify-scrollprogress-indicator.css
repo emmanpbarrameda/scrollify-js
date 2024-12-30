@@ -1,4 +1,4 @@
-/* ==================== SCROLLIFY - SCROLL PROGRESS INDICATOR WHEN SCROLLING ON WEB PAGE ==================== */
+/* ==================== SCROLLIFY-JS - SCROLL PROGRESS INDICATOR WHEN SCROLLING ON WEB PAGE ==================== */
 /*
     This CSS file contains the styles for the scroll progress bar. The bar is fixed at the top of the page
     and visually indicates how much of the page has been scrolled by the user.
@@ -40,7 +40,7 @@
      * DEFAULT: 89px
      ! Feel free to change this
     ------------------------------------- */
-    top: 0px;
+    top: 89px;
 
     /* -------------------------------------
      Set the progress bar to fixed position, so it stays in place when scrolling
