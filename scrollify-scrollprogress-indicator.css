@@ -23,7 +23,7 @@
     /* -------------------------------------
      * Transition effect for smooth width change when scrolling
     ------------------------------------- */
-    transition: width 0.3s ease;
+    transition: width 0.7s ease-in-out;
 
     /* -------------------------------------
      * initial (default) width of the progress bar to 0
