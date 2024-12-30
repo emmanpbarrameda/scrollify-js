@@ -1,4 +1,12 @@
-/* ==================== SCROLLIFY-JS - SCROLL PROGRESS INDICATOR WHEN SCROLLING ON WEB PAGE ==================== */
+/* =========================================================
+
+    SCROLLIFY-JS - SCROLL PROGRESS INDICATOR WHEN SCROLLING ON WEB PAGE 
+    https://github.com/emmanpbarrameda/scrollify-js
+
+    © emmanpbarrameda - https://emmanpbarrameda.github.io/
+
+============================================================ */
+
 
 /* =================== PAGE LOAD EVENT =================== */
 /* 
