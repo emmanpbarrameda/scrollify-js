@@ -21,21 +21,10 @@ window.addEventListener('load', function () {
     It updates the width of the progress bar based on how far the user has scrolled through the page.
 */
 
-window.addEventListener('load', function () {
+window.addEventListener('scroll', function () {
     const progressBar = document.querySelector('.scrollify_scroll_progress');
-
-    // custom data attributes
-    const height = progressBar.dataset.height || '4px';
-    const background = progressBar.dataset.background || 'linear-gradient(to left, #4E73DF, #4da3ff)';
-    const zIndex = progressBar.dataset.zIndex || '999';
-    const top = progressBar.dataset.top || '89px';
-
-    // applyy the custom data attributes to the progress bar
-    progressBar.style.height = height;
-    progressBar.style.background = background;
-    progressBar.style.zIndex = zIndex;
-    progressBar.style.top = top;
-
-    // reset the width on page load
-    progressBar.style.width = '0%';
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (scrollTop / scrollHeight) * 100;
+    progressBar.style.width = `${scrolled}%`;
 });

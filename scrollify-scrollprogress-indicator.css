@@ -18,7 +18,7 @@
      * DEFAULT: linear-gradient(to left, #4E73DF, #4da3ff)
      ! Feel free to change the gradient colors
     ------------------------------------- */
-    background: linear-gradient(to left, #4E73DF, #4da3ff);
+    background: linear-gradient(to left, #B374F8, #4da3ff); 
 
     /* -------------------------------------
      * Transition effect for smooth width change when scrolling
@@ -40,7 +40,7 @@
      * DEFAULT: 89px
      ! Feel free to change this
     ------------------------------------- */
-    top: 89px;
+    top: 0px;
 
     /* -------------------------------------
      Set the progress bar to fixed position, so it stays in place when scrolling
