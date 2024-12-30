@@ -5,6 +5,7 @@
 <p align="center">
   <img alt="Made by" src="https://img.shields.io/badge/MADE_BY-EMMAN_P_BARRAMEDA-1877F2?style=for-the-badge&labelColor=FFFFFF"/>
   <img alt="Open Source" src="https://img.shields.io/badge/OPEN_SOURCE-FE7D37?style=for-the-badge&logo=git&logoColor=white"/>
+  <img src="https://img.shields.io/badge/CSS-1E90FF?style=for-the-badge&logo=css&logoColor=black"/>
   <img src="https://img.shields.io/badge/JavaScript-FFD700?style=for-the-badge&logo=javascript&logoColor=black"/>
 </p>
 
