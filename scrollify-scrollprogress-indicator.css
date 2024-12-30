@@ -31,7 +31,7 @@
     /* -------------------------------------
      * Transition effect for smooth width change when scrolling
     ------------------------------------- */
-    transition: width 0.3s ease;
+    transition: width 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 
     /* -------------------------------------
      * initial (default) width of the progress bar to 0
