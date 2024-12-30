@@ -7,7 +7,7 @@
 */
 
 window.addEventListener('load', function () {
-    const progressBar = document.querySelector('.scroll_progress');
+    const progressBar = document.querySelector('.scrollify_scroll_progress');
 
     /* -------------------------------------
      * Reset the progress bar width to 0 on page load
@@ -22,7 +22,7 @@ window.addEventListener('load', function () {
 */
 
 window.addEventListener('scroll', function () {
-    const progressBar = document.querySelector('.scroll_progress');
+    const progressBar = document.querySelector('.scrollify_scroll_progress');
     const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
     const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     const scrolled = (scrollTop / scrollHeight) * 100;
