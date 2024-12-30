@@ -37,7 +37,7 @@
 
     /* -------------------------------------
      * Position the bar from the top of the page
-     * DEFAULT: 89px
+     * DEFAULT: 0px or 89px
      ! Feel free to change this
     ------------------------------------- */
     top: 0px;
