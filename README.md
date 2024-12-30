@@ -1,60 +1,85 @@
-# Scrollify - Scroll Progress Bar Indicator
+<h1 align="center">Scrollify - Scroll Progress Bar Indicator</h1>
 
-<h3 align='center'> Scrollify - A Simple Scroll Progress Indicator for Web Pages </h3>
+<p align="center">A modern, lightweight scroll progress indicator for web pages</p>
 
-<!-- personal badges -------------------------------------->
-<br>
 <p align="center">
-
-  <!-- my name -->
-  <img alt='/e/' src='https://img.shields.io/badge/MADE_BY - EMMAN_P_BARRAMEDA-100000?style=for-the-badge&logo=/e/&logoColor=1877F2&labelColor=FFFFFF&color=1877F2'/>
-  
-  <!-- open source -->
-  <img alt='Git' src='https://img.shields.io/badge/OPEN_SOURCE-100000?style=for-the-badge&logo=Git&logoColor=FFF9F9&labelColor=FE7D37&color=FE7D37'/>
-  
+  <img alt="Made by" src="https://img.shields.io/badge/MADE_BY-EMMAN_P_BARRAMEDA-1877F2?style=for-the-badge&labelColor=FFFFFF"/>
+  <img alt="Open Source" src="https://img.shields.io/badge/OPEN_SOURCE-FE7D37?style=for-the-badge&logo=git&logoColor=white"/>
+  <img src="https://img.shields.io/badge/JavaScript-FFD700?style=for-the-badge&logo=javascript&logoColor=black"/>
 </p>
 
-<!-- primary badges -------------------------------------->
 <p align="center">
-  
-  <!-- language -->
-  <img src='https://img.shields.io/badge/JavaScript-FFD700?style=for-the-badge&logo=javascript&logoColor=white' />  
-
-  <!-- views -->
   <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Femmanpbarrameda%2Fscrollify-js&count_bg=%233D7CC8&title_bg=%23555555&icon=github.svg&icon_color=%23FFFFFF&title=visitors&edge_flat=true"/>
-  
-  <!-- follow -->
-  <img src='https://img.shields.io/github/followers/emmanpbarrameda.svg?style=social&label=Follow&maxAge=2592000' />  
-  
-  <!-- license -->
-  <img src='https://img.shields.io/github/license/emmanpbarrameda/scrollify-js.svg?style=flat-square' />    
-
+  <img src="https://img.shields.io/github/followers/emmanpbarrameda.svg?style=social&label=Follow"/>
+  <img src="https://img.shields.io/github/license/emmanpbarrameda/scrollify-js.svg?style=flat-square"/>
 </p>
 
-<!-- ------ -->
+<p align="center">
+  <img src="https://raw.githubusercontent.com/emmanpbarrameda/scrollify-js/main/preview/preview.gif" width="500" alt="Preview"/>
+</p>
 
-## 💻 **How to Use**
-To integrate the Scrollify progress bar indicator into your web page, follow these simple steps:
+<p align="center">
+  <a href="https://codepen.io/emmanpbarrameda/pen/emOGzYJ" target="_blank"><strong>🔴 Live Demo on CodePen</strong></a>
+</p>
 
-1. **Include the CSS and JavaScript Files**
+## ✨ Features
 
-    Add the following link to include the Scrollify progress bar CSS:
+- Sleek and modern scroll progress indicator
+- Fully customizable appearance (height, colors, position)
+- Smooth animation effects
+- Lightweight with no dependencies
+- Easy integration with any website
 
-    ```html
+## 🚀 Installation
+
+### 1. Include Required Files
+
+Add the following links to your HTML:
+
+```html
+<!-- CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/emmanpbarrameda/scrollify-js@latest/scrollify-scrollprogress-indicator.css">
+
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/gh/emmanpbarrameda/scrollify-js@latest/scrollify-scrollprogress-indicator.js"></script>
+```
+
+### 2. Add Progress Bar Element
+
+Insert this div where you want the progress bar to appear:
+
+```html
+<div 
+    class="scrollify_scroll_progress" 
+    data-height="4px"
+    data-background="linear-gradient(to left, #B374F8, #4da3ff)" 
+    data-z-index="10000" 
+    data-top="0px">
+</div>
+```
+
+## 🎨 Customization
+
+Customize the progress bar using these data attributes:
+
+| Attribute | Description | Default Value |
+|-----------|-------------|---------------|
+| `data-height` | Height of the progress bar | `4px` |
+| `data-background` | Background color/gradient | `linear-gradient(to left, #B374F8, #4da3ff)` |
+| `data-z-index` | Stack order of the bar | `10000` |
+| `data-top` | Top position of the bar | `0px` |
+
+## 💻 Usage Example
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Website with Scrollify</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/emmanpbarrameda/scrollify-js@latest/scrollify-scrollprogress-indicator.css">
-    ```
-
-    Then, include the following script tag to add the functionality:
-
-    ```html
-    <script src="https://cdn.jsdelivr.net/gh/emmanpbarrameda/scrollify-js@latest/scrollify-scrollprogress-indicator.js"></script>
-    ```
-
-2. **Add the Progress Bar HTML**
-
-    To display the scroll progress bar, place this `<div>` in your HTML code, where you want the progress bar to appear. You can customize the appearance using the data attributes such as `data-height`, `data-background`, `data-z-index`, and `data-top`.
-
-    ```html
+</head>
+<body>
+    <!-- Progress Bar -->
     <div 
         class="scrollify_scroll_progress" 
         data-height="4px"
@@ -62,64 +87,71 @@ To integrate the Scrollify progress bar indicator into your web page, follow the
         data-z-index="10000" 
         data-top="0px">
     </div>
-    ```
 
-3. **Customize the Progress Bar**
+    <!-- Your content here -->
 
-    You can adjust the following properties to customize the progress bar:
+    <script src="https://cdn.jsdelivr.net/gh/emmanpbarrameda/scrollify-js@latest/scrollify-scrollprogress-indicator.js"></script>
+</body>
+</html>
+```
 
-    - `data-height`: Defines the height of the progress bar (default is `4px`).
-    - `data-background`: Sets the background gradient color (default is `linear-gradient(to left, #B374F8, #4da3ff)`).
-    - `data-z-index`: Defines the stacking order of the progress bar (default is `10000`).
-    - `data-top`: Controls the top position of the progress bar (default is `0px`).
+## 🤝 Contributing
 
-4. **Enjoy the Scroll Progress Indicator!**
+Want to contribute? That's great! You can:
+1. Fork the [repository](https://github.com/emmanpbarrameda/scrollify-js)
+2. Create a feature branch (`git checkout -b feature/NewFeature`)
+3. Push your changes (`git push origin feature/NewFeature`)
+4. Open a Pull Request
 
-    Once you have added the required HTML, CSS, and JavaScript, the scroll progress bar will appear at the top of your page, visually indicating the progress as the user scrolls.
+## 📄 License
 
-<br>
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## 👨‍💻 **Features**
-- Visually indicates scroll progress on your web page
-- Customizable height, background, and position
-- Smooth transition effect when scrolling
+## 💪 Support the Project
 
-<br>
+If you find this project helpful, consider:
 
-## 💡 **Technologies Used**
-- HTML
-- CSS
-- JavaScript
+- ⭐ Starring the repository on GitHub
+- 🐦 Sharing it on [Twitter](https://twitter.com/)
+- ☕ Supporting via [PayPal](https://paypal.me/emmanpbarrameda)
 
-<br>
+## 👤 Get in touch
 
-## ⚙️ **Requirements**
-No special requirements. Simply add the provided HTML, CSS, and JS code to your web page.
+<!-- Social -->
+<table width="100%" align="center">
+  <tr>
+    <td align="center">
+      <a href="https://emmanpbarrameda.github.io">
+        <strong>Visit My Portfolio</strong>
+        <br />
+        <img src="https://avatars.githubusercontent.com/u/67356375?v=4" alt="Profile Image" width="180" style="border-radius: 50%;" />
+      </a>
+      <br />
+      <p>Check out <a href="https://emmanpbarrameda.github.io" target="_blank">my portfolio</a> to learn more about me!</p>
+      <a href="https://github.com/emmanpbarrameda" target="_blank"><img src="https://img.shields.io/github/followers/emmanpbarrameda.svg?style=social&label=Follow on GitHub&maxAge=2592000" alt="GitHub Followers" /></a>
+    </td>
+    <td align="center">
+      <a href="https://emmanpbarrameda.github.io">
+        <img src="https://i.imgur.com/HXUaVAA.png" alt="Cover Image"/>
+      </a>
+    </td>
+  </tr>
+</table>
 
-<br>
+<p align="center">
+  <a href="https://emmanpbarrameda.github.io" target="_blank"><img src="https://img.shields.io/badge/My Portfolio-%20-blue?style=for-the-badge&logo=web"></a>
+  &nbsp;&nbsp;
+  <a href="mailto:emmanuelbarrameda1@gmail.com" target="_blank"><img src="https://img.shields.io/badge/Email-%20-red?style=for-the-badge&logo=gmail"></a>
+  &nbsp;&nbsp;
+  <a href="https://facebook.com/emmanpbarrameda/" target="_blank"><img src="https://img.shields.io/badge/Facebook-%20-blue?style=for-the-badge&logo=facebook"></a>
+  &nbsp;&nbsp;
+  <a href="https://t.me/emmanpbarrameda/" target="_blank"><img src="https://img.shields.io/badge/Telegram-%20-blue?style=for-the-badge&logo=telegram"></a>
+  &nbsp;&nbsp;
+  <a href="https://linkedin.com/in/emmanpbarrameda/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-%20-blue?style=for-the-badge&logo=linkedin"></a>
+  &nbsp;&nbsp;
+  <a href="https://github.com/emmanpbarrameda/" target="_blank"><img src="https://img.shields.io/badge/GitHub-%20-black?style=for-the-badge&logo=github"></a>
+</p>
 
-## 📝 **License**
-This project is licensed under the MIT License. [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/emmanpbarrameda/scrollify-js/blob/main/LICENSE)
+------------
 
-```txt
-MIT License
-
-Copyright (c) 2023 EMMANPBARRAMEDA
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+<p align="center">Made with ❤️ by <a href="https://emmanpbarrameda.github.io">emmanpbarrameda</a></p>
