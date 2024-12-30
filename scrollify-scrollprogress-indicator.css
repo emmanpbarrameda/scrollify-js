@@ -1,0 +1,59 @@
+/* ==================== SCROLLIFY - SCROLL PROGRESS INDICATOR WHEN SCROLLING ON WEB PAGE ==================== */
+/*
+    This CSS file contains the styles for the scroll progress bar. The bar is fixed at the top of the page
+    and visually indicates how much of the page has been scrolled by the user.
+*/
+
+.scroll_progress {
+
+    /* -------------------------------------
+     * Set the height of the progress bar
+     * DEFAULT: 4px
+     ! Feel free to change this
+    ------------------------------------- */
+    height: 4px;
+
+    /* -------------------------------------
+     * Set the background gradient color of the progress bar
+     * DEFAULT: linear-gradient(to left, #4E73DF, #4da3ff)
+     ! Feel free to change the gradient colors
+    ------------------------------------- */
+    background: linear-gradient(to left, #4E73DF, #4da3ff);
+
+    /* -------------------------------------
+     * Transition effect for smooth width change when scrolling
+    ------------------------------------- */
+    transition: width 0.3s ease;
+
+    /* -------------------------------------
+     * initial (default) width of the progress bar to 0
+    ------------------------------------- */
+    width: 0;
+
+    /* -------------------------------------
+     * Ensure the progress bar stays on top of other elements
+    ------------------------------------- */
+    z-index: 999;
+
+    /* -------------------------------------
+     * Position the bar from the top of the page
+     * DEFAULT: 89px
+     ! Feel free to change this
+    ------------------------------------- */
+    top: 89px;
+
+    /* -------------------------------------
+     Set the progress bar to fixed position, so it stays in place when scrolling
+    ------------------------------------- */
+    position: fixed;
+
+    /* -------------------------------------
+     Align the progress bar to the left edge of the viewport
+    ------------------------------------- */
+    left: 0;
+
+    /* -------------------------------------
+     Make the progress bar span the full width of the viewport
+    ------------------------------------- */
+    width: 100%;
+}
