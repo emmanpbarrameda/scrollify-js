@@ -2,7 +2,7 @@
 
 /* =================== PAGE LOAD EVENT =================== */
 /* 
-    This event listener ensures that the progress bar starts with a width of 0 when the page is loaded.
+    ! event listener ensures that the progress bar starts with a width of 0 when the page is loaded.
     It is triggered when the page finishes loading.
 */
 
@@ -17,7 +17,7 @@ window.addEventListener('load', function () {
 
 /* =================== SCROLL EVENT =================== */
 /* 
-    This event listener calculates the scroll position on every scroll event.
+    ! event listener calculates the scroll position on every scroll event.
     It updates the width of the progress bar based on how far the user has scrolled through the page.
 */
 
@@ -36,7 +36,7 @@ window.addEventListener('load', function () {
 
     // custom data attributes
     const height = progressBar.dataset.height || '4px';
-    const background = progressBar.dataset.background || 'linear-gradient(to left, #4E73DF, #4da3ff)';
+    const background = progressBar.dataset.background || 'linear-gradient(to left, #B374F8, #4da3ff)';
     const zIndex = progressBar.dataset.zIndex || '999';
     const top = progressBar.dataset.top || '89px';
 
@@ -46,6 +46,6 @@ window.addEventListener('load', function () {
     progressBar.style.zIndex = zIndex;
     progressBar.style.top = top;
 
-    // Reset the width on page load
+    // reset the width on page load
     progressBar.style.width = '0%';
 });
