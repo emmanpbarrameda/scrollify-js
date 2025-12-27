@@ -135,7 +135,6 @@
     }
 
     function ensureBackToTopMarkup(btn) {
-        // If dev already provided markup, do nothing
         if (btn.querySelector(".scrollify-btt__ring") && btn.querySelector(".scrollify-btt__icon")) return;
 
         btn.innerHTML = `
@@ -172,7 +171,7 @@
 
         const showAfter = Number(btn.dataset.show || 300);
 
-        // position (left|right)
+        // position
         const position = (btn.dataset.position || "right").toLowerCase();
         btn.classList.remove("scrollify-btt--left", "scrollify-btt--right");
         btn.classList.add(position === "left" ? "scrollify-btt--left" : "scrollify-btt--right");
@@ -203,12 +202,9 @@
 
         const colors = parseLinearGradientColors(progressGradient);
         if (colors) {
-            // Unique per init to avoid collisions if multiple instances exist
             const gradId = `scrollifyBttGrad-${Math.random().toString(36).slice(2, 9)}`;
             const strokeValue = applySvgGradient(svg, gradId, colors);
             progressCircle.setAttribute("stroke", strokeValue);
-
-            // Arrow uses first color so it matches nicely
             btn.style.color = colors[0];
         } else {
             progressCircle.setAttribute("stroke", progressColor);

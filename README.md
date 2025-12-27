@@ -43,10 +43,10 @@ Add the following links to your HTML:
 
 ```html
 <!-- CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/emmanpbarrameda/scrollify-js@latest/scrollify-scrollprogress-indicator.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/emmanpbarrameda/scrollify-js@v2.0.0/scrollify-scrollprogress-indicator.css">
 
 <!-- JavaScript -->
-<script src="https://cdn.jsdelivr.net/gh/emmanpbarrameda/scrollify-js@latest/scrollify-scrollprogress-indicator.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/emmanpbarrameda/scrollify-js@v2.0.0/scrollify-scrollprogress-indicator.js"></script>
 ```
 
 ### 2) Add Top Progress Bar
@@ -122,7 +122,7 @@ data-progress-gradient="linear-gradient(to left, #B374F8, #4da3ff)"
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Scrollify Demo</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/emmanpbarrameda/scrollify-js@latest/scrollify-scrollprogress-indicator.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/emmanpbarrameda/scrollify-js@v2.0.0/scrollify-scrollprogress-indicator.css">
     
   </head>
   <body>
@@ -157,7 +157,7 @@ data-progress-gradient="linear-gradient(to left, #B374F8, #4da3ff)"
       </a>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/gh/emmanpbarrameda/scrollify-js@latest/scrollify-scrollprogress-indicator.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/emmanpbarrameda/scrollify-js@v2.0.0/scrollify-scrollprogress-indicator.js"></script>
   </body>
 </html>
 ```

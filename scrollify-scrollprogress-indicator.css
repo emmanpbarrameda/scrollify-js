@@ -188,7 +188,6 @@
     .scrollify-btt__progress {
         transition: none !important;
     }
-
     .scrollify-btt[data-spin="true"] .scrollify-btt__svg {
         animation: none !important;
     }
