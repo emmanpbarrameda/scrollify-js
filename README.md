@@ -1,6 +1,6 @@
 <h1 align="center">Scrollify - Scroll Progress Bar Indicator</h1>
 
-<p align="center">A modern, lightweight scroll progress indicator for web pages</p>
+<p align="center">A modern, lightweight scroll progress indicator + back-to-top button for web pages</p>
 
 <p align="center">
   <img alt="Made by" src="https://img.shields.io/badge/MADE_BY-EMMAN_P_BARRAMEDA-1877F2?style=for-the-badge&labelColor=FFFFFF"/>
@@ -21,25 +21,23 @@
 
 <p align="center">
   <a href="https://codepen.io/emmanpbarrameda/pen/emOGzYJ" target="_blank">
-    <strong>🔴 Live Demo on CodePen</strong>
+    <strong>Click Here for LIVE Demo</strong>
   </a>
   <br>
-  <a href="https://github.com/emmanpbarrameda/scrollify-php" target="_blank">
-    <strong>Looking for PHP Version?</strong>
-  </a>
 </p>
 
 ## ✨ Features
 
-- Sleek and modern scroll progress indicator
-- Fully customizable appearance (height, colors, position)
-- Smooth animation effects
+- Sleek and modern top scroll progress bar (GPU-friendly `transform: scaleX()`)
+- Optional Back to Top button with circular scroll progress ring
+- Fully customizable via `data-*` attributes (colors, size, position, offsets, etc.)
+- Smooth animations (requestAnimationFrame + passive listeners)
 - Lightweight with no dependencies
 - Easy integration with any website
 
 ## 🚀 Installation
 
-### 1. Include Required Files
+### 1) Include Required Files
 
 Add the following links to your HTML:
 
@@ -51,61 +49,123 @@ Add the following links to your HTML:
 <script src="https://cdn.jsdelivr.net/gh/emmanpbarrameda/scrollify-js@latest/scrollify-scrollprogress-indicator.js"></script>
 ```
 
-### 2. Add Progress Bar Element
-
-Insert this div where you want the progress bar to appear:
+### 2) Add Top Progress Bar
 
 ```html
 <div 
-    class="scrollify_scroll_progress" 
-    data-height="4px"
-    data-background="linear-gradient(to left, #B374F8, #4da3ff)" 
-    data-z-index="10000" 
-    data-top="0px">
+  class="scrollify_scroll_progress" 
+  data-height="4px"
+  data-background="linear-gradient(to left, #B374F8, #4da3ff)" 
+  data-z-index="10000" 
+  data-top="0px">
 </div>
+```
+
+### 3) Add Back to Top Button (Optional)
+
+```html
+<button
+  id="scrollify_scroll_progress_backToTop"
+  class="scrollify-btt"
+  data-position="right"
+  data-offset="20"
+  data-size="44"
+  data-stroke="3"
+  data-show="300"
+  data-progress-color="#0ea5e9"
+  data-track-color="rgba(14,165,233,0.2)"
+  data-hover="true"
+  aria-label="Back to top"
+  title="Back to top">
+</button>
+```
+
+Want a gradient ring? Use `data-progress-gradient`:
+
+```html
+data-progress-gradient="linear-gradient(to left, #B374F8, #4da3ff)"
 ```
 
 ## 🎨 Customization
 
-Customize the progress bar using these data attributes:
+### Progress Bar (`.scrollify_scroll_progress`)
 
 | Attribute | Description | Default Value |
-|-----------|-------------|---------------|
+|----------|-------------|---------------|
 | `data-height` | Height of the progress bar | `4px` |
 | `data-background` | Background color/gradient | `linear-gradient(to left, #B374F8, #4da3ff)` |
-| `data-z-index` | Stack order of the bar | `10000` |
+| `data-z-index` | Stack order of the bar | `999` |
 | `data-top` | Top position of the bar | `0px` |
 
-## 💻 Usage Example
+### Back To Top (`#scrollify_scroll_progress_backToTop`)
+
+| Attribute | Description | Default Value |
+|----------|-------------|---------------|
+| `data-position` | `left` or `right` | `right` |
+| `data-offset` | Bottom + side spacing (px) | `20` |
+| `data-size` | Button width/height (px) | `44` |
+| `data-stroke` | Ring thickness | `3` |
+| `data-show` | Show after scrollY (px) | `300` |
+| `data-progress-color` | Ring progress color | `#0ea5e9` |
+| `data-progress-gradient` | Ring progress gradient | *(none)* |
+| `data-track-color` | Ring track color | `rgba(14,165,233,0.2)` |
+| `data-hover` | Hover nudge (icon) `true/false` | `true` |
+| `data-spin` | Spin ring `true/false` | `false` |
+
+## 💻 Full Implementation
 
 ```html
 <!DOCTYPE html>
-<html>
-<head>
-    <title>My Website with Scrollify</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/emmanpbarrameda/scrollify-js@latest/scrollify-scrollprogress-indicator.css">
-</head>
-<body>
-    <!-- Progress Bar -->
-    <div 
-        class="scrollify_scroll_progress" 
-        data-height="4px"
-        data-background="linear-gradient(to left, #B374F8, #4da3ff)" 
-        data-z-index="10000" 
-        data-top="0px">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scrollify Demo</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/emmanpbarrameda/scrollify-js@latest/scrollify-scrollprogress-indicator.css" />
+    
+  </head>
+  <body>
+    <div
+      class="scrollify_scroll_progress"
+      data-height="3px"
+      data-background="linear-gradient(to left, #B374F8, #4da3ff)"
+      data-z-index="999"
+      data-top="0px">
     </div>
 
-    <!-- Your content here -->
+    <button
+      id="scrollify_scroll_progress_backToTop"
+      class="scrollify-btt"
+      data-position="right"
+      data-offset="20"
+      data-size="44"
+      data-stroke="3"
+      data-show="300"
+      data-progress-gradient="linear-gradient(to left, #B374F8, #4da3ff)"
+      data-track-color="rgba(14,165,233,0.2)"
+      data-hover="true"
+      aria-label="Back to top"
+      title="Back to top">
+    </button>
+
+    <div style="height: 2000px; padding: 24px;">
+      Scroll down to see Scrollify in action! <br />
+      © emmanpbarrameda -
+      <a href="https://emmanpbarrameda.github.io/" target="_blank" rel="noopener noreferrer">
+        https://emmanpbarrameda.github.io/
+      </a>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/gh/emmanpbarrameda/scrollify-js@latest/scrollify-scrollprogress-indicator.js"></script>
-</body>
+  </body>
 </html>
 ```
 
 ## 🤝 Contributing
 
 Want to contribute? That's great! You can:
-1. Fork the [repository](https://github.com/emmanpbarrameda/scrollify-js)
+1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/NewFeature`)
 3. Push your changes (`git push origin feature/NewFeature`)
 4. Open a Pull Request
@@ -119,12 +179,11 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 If you find this project helpful, consider:
 
 - ⭐ Starring the repository on GitHub
-- 🐦 Sharing it on [Twitter](https://twitter.com/)
-- ☕ Supporting via [PayPal](https://paypal.me/emmanpbarrameda)
+- 🐦 Sharing it on Twitter
+- ☕ Supporting via PayPal: https://paypal.me/emmanpbarrameda
 
 ## 👤 Get in touch
 
-<!-- Social -->
 <table width="100%" align="center">
   <tr>
     <td align="center">

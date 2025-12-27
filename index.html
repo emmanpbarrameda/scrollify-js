@@ -1,11 +1,8 @@
-<!-- /* =========================================================
-
-    SCROLLIFY-JS - SCROLL PROGRESS INDICATOR WHEN SCROLLING ON WEB PAGE 
-    https://github.com/emmanpbarrameda/scrollify-js
-
-    © emmanpbarrameda - https://emmanpbarrameda.github.io/
-
-============================================================ */ -->
+<!-- =========================================================
+  SCROLLIFY-JS
+  https://github.com/emmanpbarrameda/scrollify-js
+  © emmanpbarrameda - https://emmanpbarrameda.github.io/
+========================================================= -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,14 +10,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Scrollify by emmanpbarrameda - Scroll Progress Bar Indicator</title>
+
+    <!-- Scrollify CSS -->
     <link rel="stylesheet" href="./scrollify-scrollprogress-indicator.css" />
   </head>
-  <body>
 
-    <!-- -------------HOW TO USE---------------
-        Include the scrollify progress bar indicator
-        * feel free to customize the height, background, z-index and top
-    --------------------------------------- -->
+  <body>
+    
+    <!-- =====================================================
+      HOW TO USE: TOP SCROLL PROGRESS BAR
+      - Customize via data-height, data-background, data-z-index, data-top
+    ====================================================== -->
     <div
       class="scrollify_scroll_progress"
       data-height="3px"
@@ -29,14 +29,41 @@
       data-top="0px">
     </div>
 
+    <!-- =====================================================
+      HOW TO USE: BACK TO TOP (CIRCULAR PROGRESS)
+      - Customize via data-position, data-offset, data-size, data-stroke, data-show
+      - Color via data-progress-color "OR" data-progress-gradient
+      - Toggle hover nudge via data-hover="false"
+    ====================================================== -->
+    <button
+      id="scrollify_scroll_progress_backToTop"
+      class="scrollify-btt"
+      data-position="right"
+      data-offset="20"
+      data-size="44"
+      data-stroke="3"
+      data-show="300"
+      data-progress-color="#0ea5e9"
+      data-track-color="rgba(14,165,233,0.2)"
+      data-hover="true"
+      aria-label="Back to top"
+      title="Back to top">
+    </button>
+
+    <!-- content -->
     <div style="height: 2000px">
       Scroll down to see the scrollify-js progress bar indicator! <br />
       © emmanpbarrameda -
-      <a href="https://emmanpbarrameda.github.io/" target="_blank" rel="noopener noreferrer">
+      <a
+        href="https://emmanpbarrameda.github.io/"
+        target="_blank"
+        rel="noopener noreferrer">
         https://emmanpbarrameda.github.io/
       </a>
     </div>
 
+    <!-- Scrollify JS -->
     <script src="./scrollify-scrollprogress-indicator.js"></script>
+
   </body>
 </html>
