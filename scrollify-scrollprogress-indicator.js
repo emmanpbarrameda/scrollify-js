@@ -1,59 +1,77 @@
 /* =========================================================
-
-    SCROLLIFY-JS - SCROLL PROGRESS INDICATOR WHEN SCROLLING ON WEB PAGE 
+    SCROLLIFY-JS - SCROLL PROGRESS INDICATOR WHEN SCROLLING ON WEB PAGE
     https://github.com/emmanpbarrameda/scrollify-js
-
     © emmanpbarrameda - https://emmanpbarrameda.github.io/
-
 ============================================================ */
 
-
-/* =================== PAGE LOAD EVENT =================== */
-/* 
-    ! event listener ensures that the progress bar starts with a width of 0 when the page is loaded.
-    It is triggered when the page finishes loading.
+/*
+    This implementation uses:
+    - transform: scaleX() (GPU-friendly)
+    - requestAnimationFrame throttling
+    - passive listeners
+    - progress clamping (0..1)
+    - resize handling
+    - small-delta update guard
 */
 
-window.addEventListener('load', function () {
-    const progressBar = document.querySelector('.scrollify_scroll_progress');
+(() => {
+    const SELECTOR = '.scrollify_scroll_progress';
+    const DELTA_THRESHOLD = 0.001;
 
-    /* -------------------------------------
-     * Reset the progress bar width to 0 on page load
-    ------------------------------------- */
-    progressBar.style.width = '0%';
-});
+    function init() {
+        const progressBar = document.querySelector(SELECTOR);
+        if (!progressBar) return;
 
-/* =================== SCROLL EVENT =================== */
-/* 
-    ! event listener calculates the scroll position on every scroll event.
-    It updates the width of the progress bar based on how far the user has scrolled through the page.
-*/
+        // Apply custom data attributes (kept from original)
+        const height = progressBar.dataset.height || '4px';
+        const background = progressBar.dataset.background || 'linear-gradient(to left, #B374F8, #4da3ff)';
+        const zIndex = progressBar.dataset.zIndex || '999';
+        const top = progressBar.dataset.top || '0px';
 
-window.addEventListener('scroll', function () {
-    const progressBar = document.querySelector('.scrollify_scroll_progress');
-    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (scrollTop / scrollHeight) * 100;
-    progressBar.style.width = `${scrolled}%`;
-});
+        progressBar.style.height = height;
+        progressBar.style.background = background;
+        progressBar.style.zIndex = zIndex;
+        progressBar.style.top = top;
 
+        const barStyle = progressBar.style;
 
-/* =================== LOAD EVENT =================== */
-window.addEventListener('load', function () {
-    const progressBar = document.querySelector('.scrollify_scroll_progress');
+        let ticking = false;
+        let lastProgress = -1;
 
-    // custom data attributes
-    const height = progressBar.dataset.height || '4px';
-    const background = progressBar.dataset.background || 'linear-gradient(to left, #B374F8, #4da3ff)';
-    const zIndex = progressBar.dataset.zIndex || '999';
-    const top = progressBar.dataset.top || '89px';
+        function updateProgress() {
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
 
-    // attributes to the progress bar
-    progressBar.style.height = height;
-    progressBar.style.background = background;
-    progressBar.style.zIndex = zIndex;
-    progressBar.style.top = top;
+            if (docHeight <= 0) {
+                barStyle.transform = 'scaleX(0)';
+                lastProgress = 0;
+                ticking = false;
+                return;
+            }
 
-    // reset the width on page load
-    progressBar.style.width = '0%';
-});
+            const rawProgress = window.scrollY / docHeight;
+            const progress = Math.min(1, Math.max(0, rawProgress));
+
+            if (Math.abs(progress - lastProgress) > DELTA_THRESHOLD) {
+                barStyle.transform = `scaleX(${progress})`;
+                lastProgress = progress;
+            }
+
+            ticking = false;
+        }
+
+        function onTick() {
+            if (!ticking) {
+                requestAnimationFrame(updateProgress);
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', onTick, { passive: true });
+        window.addEventListener('resize', onTick, { passive: true });
+
+        // Initialize
+        updateProgress();
+    }
+
+    window.addEventListener('load', init);
+})();
